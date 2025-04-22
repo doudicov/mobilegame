@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7389286398400486729}
   - component: {fileID: 1178445262648168013}
   - component: {fileID: 1389075737405990272}
+  - component: {fileID: 9013740736554876024}
   m_Layer: 10
   m_Name: SkeletonEnemy
   m_TagString: Untagged
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkspeed: 3
+  walkStopRate: 0.05
   attackZone: {fileID: 6392318476872249237}
   _hasTarget: 0
 --- !u!114 &1178445262648168013
@@ -311,3 +313,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9013740736554876024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886781611546692076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e121a5ca8582cb84387cbf67db708ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
