@@ -4370,11 +4370,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571883354980844357, guid: 60474c96eb82e234695326b916da9cae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.39
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1571883354980844357, guid: 60474c96eb82e234695326b916da9cae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.83
+      value: -4.54
       objectReference: {fileID: 0}
     - target: {fileID: 1571883354980844357, guid: 60474c96eb82e234695326b916da9cae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4408,9 +4408,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4581614902087927959, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581614902087927959, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389286398400486729, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: walkspeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389286398400486729, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: walkStopRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8886781611546692076, guid: 60474c96eb82e234695326b916da9cae, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886781611546692076, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4428,6 +4448,10 @@ PrefabInstance:
     - target: {fileID: 781594110364110341, guid: 89e7ea1becb22aa4fbf2cd73fe0ab672, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 781594110364110341, guid: 89e7ea1becb22aa4fbf2cd73fe0ab672, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1188893923877917397, guid: 89e7ea1becb22aa4fbf2cd73fe0ab672, type: 3}
       propertyPath: m_Sprite
