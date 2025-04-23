@@ -17,7 +17,7 @@ TagManager:
   - PlayerHitbox
   - EnemyHitbox
   - GroundDetection
-  - 
+  - x
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: x
     uniqueID: 1938443591
+    locked: 0
+  - name: xx
+    uniqueID: 512776827
     locked: 0
