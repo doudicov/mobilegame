@@ -4676,6 +4676,10 @@ PrefabInstance:
       propertyPath: walkStopRate
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 7389286398400486729, guid: 60474c96eb82e234695326b916da9cae, type: 3}
+      propertyPath: walkAcceleration
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8886781611546692076, guid: 60474c96eb82e234695326b916da9cae, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy
@@ -4786,6 +4790,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6464773135376951687, guid: 89e7ea1becb22aa4fbf2cd73fe0ab672, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628251279107570033, guid: 89e7ea1becb22aa4fbf2cd73fe0ab672, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
