@@ -5,7 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 1f;
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float airWalkSpeed = 0.05f;
     Vector2 moveInput;
     TouchingDirections touchingDirections;
+    Damageable damageable;
+    
     public float CurrentMoveSpeed { get
         {
             if (CanMove)
@@ -104,6 +106,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
     Rigidbody2D rb;
     Animator animator;
     private bool isFacingRight;
@@ -114,12 +118,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
+        
 
     }
 
     private void FixedUpdate()
     {
-      rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);  
+        if(!damageable.LockVelocity)
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);  
+
       animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
     }
 
@@ -180,5 +188,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
