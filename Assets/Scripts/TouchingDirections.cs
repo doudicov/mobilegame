@@ -10,12 +10,14 @@ public class TouchingDirections : MonoBehaviour
     public float wallDistance = 0.2f;
     public float ceilingDistance = 0.05f;
 
+
     CapsuleCollider2D touchingCol;
     Animator animator;
-
+    
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
     RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
+   
 
     [SerializeField]
     private bool _isGrounded;
@@ -29,6 +31,7 @@ public class TouchingDirections : MonoBehaviour
         {
             _isGrounded = value;
             animator.SetBool(AnimationStrings.isGrounded,value);
+            
         }
     }
 
@@ -70,6 +73,8 @@ public class TouchingDirections : MonoBehaviour
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
+        castFilter.useLayerMask = true;
+        
     }
 
    
@@ -79,5 +84,6 @@ public class TouchingDirections : MonoBehaviour
         IsGrounded = touchingCol.Cast(Vector2.down, castFilter,groundHits,groundDistance) >0;
         IsOnWall = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance) > 0;
         IsOnCeiling = touchingCol.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance) > 0;
+        
     }
 }
