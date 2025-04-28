@@ -329,7 +329,7 @@ MonoBehaviour:
   groundDistance: 0.05
   wallDistance: 0.2
   ceilingDistance: 0.05
-  _isGrounded: 0
+  _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
 --- !u!70 &8979882457508822730

@@ -20,7 +20,7 @@ public class TouchingDirections : MonoBehaviour
    
 
     [SerializeField]
-    private bool _isGrounded;
+    private bool _isGrounded = true;
     public bool IsGrounded
     {
         get
