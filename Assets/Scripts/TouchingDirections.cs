@@ -77,13 +77,26 @@ public class TouchingDirections : MonoBehaviour
         
     }
 
-   
+    private bool IsValidHit(RaycastHit2D[] hits, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (hits[i].collider != null && hits[i].distance > 0f)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     void FixedUpdate()
     {
-        IsGrounded = touchingCol.Cast(Vector2.down, castFilter,groundHits,groundDistance) >0;
-        IsOnWall = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance) > 0;
-        IsOnCeiling = touchingCol.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance) > 0;
-        
+        int groundHitCount = touchingCol.Cast(Vector2.down, castFilter, groundHits, groundDistance);
+        int wallHitCount = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance);
+        int ceilingHitCount = touchingCol.Cast(Vector2.up, castFilter, ceilingHits, ceilingDistance);
+
+        IsGrounded = IsValidHit(groundHits, groundHitCount);
+        IsOnWall = IsValidHit(wallHits, wallHitCount);
+        IsOnCeiling = IsValidHit(ceilingHits, ceilingHitCount);
     }
 }
