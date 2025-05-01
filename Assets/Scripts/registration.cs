@@ -16,7 +16,7 @@ public class RegisterUI : MonoBehaviour
 
         StartCoroutine(NetworkManager.Instance.RegisterUser(username, email, (response) =>
         {
-            resultText.text = "Register Success: " + response;
+            resultText.text = "Register Success: ";
             Debug.Log("Register Success: " + response);
         }));
     }
